@@ -50,3 +50,28 @@ $ npm run build # publish mode
     ./startup.bat #启动http server
     // 访问 http://localhost:3000/index.html
     ```
+### structure
+```
+.
+├── build/                        # webpack config files
+│   ├── template/                 # template of index and router settings
+|   └── config/                   # build config 
+|
+├── src/
+│   ├── components/               # reusable components
+│   │   └── ...
+│   ├── config/                   # global configurations like i18n, APIs etc
+│   │   └── ...
+│   ├── pages/                    # the location of all SPA apps
+│   │   ├── app1                  # app1 will be built as a single app
+|   |   |    └── routes.js        # vue-router config for app1
+|   |   |
+│   ├── store/                    # Vuex store file
+│       └── ...
+├── static/                       # pure static assets (directly copied)
+├── .babelrc                      # babel config
+├── .editorconfig.js              # editor config
+├── .eslintrc.js                  # eslint config
+└── package.json                  # build scripts and dependencies
+
+```

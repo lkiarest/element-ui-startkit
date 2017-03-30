@@ -53,25 +53,34 @@ $ npm run build # publish mode
 ### structure
 ```
 .
-├── build/                        # webpack config files
+├── build                         # webpack config files (not suggest to modify build files)
 │   ├── template/                 # template of index and router settings
-|   └── config/                   # build config 
+|   └── config/                   # build configurations
 |
 ├── src/
-│   ├── components/               # reusable components
+│   ├── components/               # reusable components (optional)
 │   │   └── ...
 │   ├── config/                   # global configurations like i18n, APIs etc
 │   │   └── ...
 │   ├── pages/                    # the location of all SPA apps
 │   │   ├── app1                  # app1 will be built as a single app
-|   |   |    └── routes.js        # vue-router config for app1
-|   |   |
-│   ├── store/                    # Vuex store file
+|   |   |    ├── routes.js        # vue-router config for app1
+|   |   |    ├── config.json      # app config(optional) will overwrite settings in build.config.js
+|   |   |    └── ...
+│   │   └── app2                  # another SPA app
+│   │        └── ...
+│   ├── services                  # services (optional)
+│   │   └── ...
+│   ├── statics                   # pure static assets (directly copied)
+│   │   └── ...
+│   └── vuex/                     # Vuex store file (optional)
 │       └── ...
-├── static/                       # pure static assets (directly copied)
+│
 ├── .babelrc                      # babel config
-├── .editorconfig.js              # editor config
+├── .editorconfig                 # editor config
 ├── .eslintrc.js                  # eslint config
+├── build.config.js               # global build config like external js/css libs, alias etc
+├── server.js                     # a simple server to check result of `npm run build`, start with `node server.js`
 └── package.json                  # build scripts and dependencies
 
 ```

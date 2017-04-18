@@ -34,7 +34,7 @@ $ npm run build # publish mode
     npm run dev
     // 发布模式
     npm run build
-    ./startup.bat #启动http server
+    node server.js #启动http server
     // 访问 http://localhost:3000/hello1/index.html
     // 访问 http://localhost:3000/hello2/index.html
     ```
@@ -47,7 +47,7 @@ $ npm run build # publish mode
     npm run dev
     // 发布模式
     npm run build
-    ./startup.bat #启动http server
+    node server.js #启动http server
     // 访问 http://localhost:3000/index.html
     ```
 ### structure
